@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+
+  ttq.load('');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Переход!</title>
+    
+    <!-- Подключаем Tailwind CSS для быстрой и адаптивной верстки -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Подключаем шрифты (похожие на стандартные шрифты Telegram) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Настройка кастомных цветов Tailwind (цвета Telegram) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tg-bg': '#E4EBF0',
+                        'tg-card': '#FFFFFF',
+                        'tg-btn': '#3390EC',
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Паттерн для фона (светлый стиль Telegram) */
+        .chat-bg {
+            background-color: #E4EBF0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23707579' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        /* Плавное появление модалки */
+        .modal-enter {
+            opacity: 0;
+            transform: scale(0.95) translateY(10px);
+            transition: all 0.3s ease-out;
+        }
+        .modal-enter-active {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        /* Стилизация скроллбара в модалке (светлая тема) */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c1c1c1; 
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="chat-bg flex justify-center items-center min-h-screen relative overflow-hidden font-sans">
+
+    <!-- Главный контейнер (Карточка) -->
+    <div class="w-[90%] max-w-[340px] bg-tg-card rounded-3xl px-6 py-10 flex flex-col items-center justify-center relative z-10 shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100">
+        
+        <!-- Аватарка (Зеленый светящийся щит/глаз) -->
+        <div class="relative w-28 h-28 bg-[#0a0a0a] rounded-full flex items-center justify-center mb-6 shadow-[0_8px_24px_rgba(34,197,94,0.2)] border border-gray-200/50">
+            <!-- Эффект внутреннего свечения -->
+            <div class="absolute inset-0 rounded-full bg-green-500 blur-2xl opacity-20"></div>
+            <!-- Иконка с галочкой -->
+            <svg class="relative z-10 w-14 h-14 text-green-400 drop-shadow-[0_0_12px_rgba(74,222,128,0.8)]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" opacity="0.1"/>
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <ellipse cx="12" cy="6" rx="5" ry="1.5" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.8"/>
+                <path d="M4 10l4 2M20 10l-4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+            </svg>
+        </div>
+
+        <!-- Заголовок -->
+        <h1 class="text-black text-[19px] font-bold text-center leading-snug mb-8 w-full px-2">
+            VivoCheck | Узнай как ты записан
+        </h1>
+
+        <!-- Главная кнопка перехода -->
+        <button onclick="goToBot()" class="w-full bg-tg-btn text-white font-bold text-[15px] py-3.5 px-6 rounded-full shadow-lg shadow-blue-500/30 active:scale-95 transition-transform hover:bg-blue-500 tracking-wide">
+            Перейти в Telegram
+        </button>
+    </div>
+
+    <!-- Ссылки для модераторов (Политика конфиденциальности) -->
+    <div class="absolute bottom-6 left-0 right-0 flex flex-col items-center gap-2 z-10">
+        <div class="flex justify-center items-center gap-3 text-[11px] text-gray-500">
+            <button onclick="openModal()" class="hover:text-gray-800 transition-colors">Политика конфиденциальности</button>
+            <span class="text-gray-400">|</span>
+            <button onclick="openModal()" class="hover:text-gray-800 transition-colors">Пользовательское соглашение</button>
+        </div>
+        <div class="text-[10px] text-gray-400">
+            &copy; <span id="current-year">2023</span>
+        </div>
+    </div>
+
+    <!-- Модальное окно Политики конфиденциальности (Светлая тема) -->
+    <div id="privacy-modal" class="fixed inset-0 bg-black/50 z-50 hidden flex-col justify-end sm:justify-center p-4 backdrop-blur-sm">
+        <div class="bg-tg-card rounded-2xl p-6 w-full max-w-md mx-auto max-h-[80vh] flex flex-col relative modal-enter shadow-2xl" id="modal-content">
+            
+            <!-- Кнопка закрытия -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 p-2 bg-gray-100 rounded-full text-gray-500 hover:bg-gray-200 hover:text-gray-800 transition-colors">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <h2 class="text-xl font-bold mb-4 pr-8 text-black">Политика конфиденциальности</h2>
+            
+            <div class="overflow-y-auto flex-1 pr-2 text-sm text-gray-600 space-y-4 custom-scrollbar">
+                <p><strong class="text-gray-800">1. Общие положения</strong><br>
+                Настоящая политика конфиденциальности определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных.</p>
+                
+                <p><strong class="text-gray-800">2. Сбор данных</strong><br>
+                Мы не собираем, не храним и не передаем третьим лицам личную информацию пользователей на этой странице. Данная страница является информационным лендингом для перехода в стороннее приложение (мессенджер Telegram).</p>
+                
+                <p><strong class="text-gray-800">3. Использование файлов Cookie</strong><br>
+                Сайт может использовать технологию «cookie» для сбора статистических данных, которые не содержат конфиденциальную информацию и не передаются третьим лицам.</p>
+                
+                <p><strong class="text-gray-800">4. Перенаправление (Редирект)</strong><br>
+                Нажимая кнопку "Перейти в телеграм" или аналогичные кнопки на сайте, пользователь соглашается на перенаправление в приложение Telegram. Администрация сайта не несет ответственности за политику конфиденциальности сторонних сервисов.</p>
+                
+                <p><strong class="text-gray-800">5. Изменения политики</strong><br>
+                Администрация сайта оставляет за собой право вносить изменения в настоящую Политику конфиденциальности без дополнительных уведомлений.</p>
+            </div>
+
+            <div class="pt-4 mt-2 border-t border-gray-100">
+                <button onclick="closeModal()" class="w-full bg-gray-100 text-gray-800 font-medium py-3 rounded-xl hover:bg-gray-200 active:scale-[0.98] transition-all">
+                    Закрыть и продолжить
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ВАЖНО: Вставьте сюда юзернейм вашего бота (можно с @ или без)
+        const BOT_USERNAME = "@my1832_5her75367291lock_bot"; // <-- ИЗМЕНИТЬ НА СВОЙ!
+        
+        // Функция перехода в бота
+        function goToBot() {
+            // Очищаем юзернейм от символа @ на случай, если он был добавлен
+            const cleanUsername = BOT_USERNAME.replace('@', '');
+
+            // Формируем ссылки
+            const tgDeepLink = `tg://resolve?domain=${cleanUsername}`;
+            const webLink = `https://t.me/${cleanUsername}`;
+
+            // Пытаемся открыть глубокую ссылку (сразу в приложение ТГ)
+            window.location.href = tgDeepLink;
+
+            // Фолбэк (fallback) на случай, если приложение не установлено или браузер блокирует deep link
+            setTimeout(() => {
+                window.location.href = webLink;
+            }, 500);
+        }
+
+        // Логика модального окна (Политики конфиденциальности)
+        const modal = document.getElementById('privacy-modal');
+        const modalContent = document.getElementById('modal-content');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            // Небольшая задержка для срабатывания CSS transition
+            setTimeout(() => {
+                modalContent.classList.add('modal-enter-active');
+            }, 10);
+        }
+
+        function closeModal() {
+            modalContent.classList.remove('modal-enter-active');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300); // время совпадает с transition в CSS
+        }
+
+        // Закрытие модалки при клике вне ее области
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Установка текущего года в футере
+        const now = new Date();
+        document.getElementById('current-year').textContent = now.getFullYear();
+    </script>
+</body>
+</html>
